@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+  </head>
+  <body>
+    <div class="header">
+      <span class="title header-item">PROJECT GEMINI</span>
+      <div class="search-bar">
+        <input type="search" placeholder="Search..." id="search-bar" />
+      </div>
+      <span class="header-item right">
+        <label id="switch" class="switch">
+          <input type="checkbox" id="slider" />
+          <span class="slider"></span>
+        </label>
+      </span>
+    </div>
+      <div class="drop-buttons">
+        <div class="drop-button">Visualize this</div>
+        <div class="drop-button">Visualize this</div>
+    </div>
+    <div class="container">
+      <div class="card">
+        <div class="card-inner">
+          <div class="card-text">Testing the text inside of this card</div>
+        </div>
+      </div>
+      <div class="big title accent">BIG TITLE</div>
+      <div class="small title accent">SMALL TITLE</div>
+    </div>
+    <div class="results-container hidden" id="results">
+      <div class="toggles">
+        Toggles not implemented yet
+        <label class="check">
+          <input type="radio" checked="checked" name="radio" />
+          All
+        </label>
+        <label class="check">
+          <input type="radio" name="radio" />
+          Belk College of Business
+        </label>
+        <label class="check">
+          <input type="radio" name="radio" />
+          College of Arts + Architecture
+        </label>
+        <label class="check">
+          <input type="radio" name="radio" />
+          Belk College of Business
+        </label>
+        <label class="check">
+          <input type="radio" name="radio" />
+          College of Computing & Informatics
+        </label>
+        <label class="check">
+          <input type="radio" name="radio" />
+          College of Education
+        </label>
+        <label class="check">
+          <input type="radio" name="radio" />
+          College of Health & Human Services
+        </label>
+        <label class="check">
+          <input type="radio" name="radio" />
+          Lee College of Engineering
+        </label>
+      </div>
+      <div class="results">
+        <div class="search-term" id="search-term">
+          Number of Array Filters: 0
+        </div>
+        <div class="search-items" id="search-items"></div>
+      </div>
+    </div>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
