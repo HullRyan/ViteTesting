@@ -103,10 +103,17 @@ input:checked + .slider {
   padding: 0.5rem;
   background-color: var(--color-fourth);
 }
-.search-bar {
+.search {
+  margin-top: 1rem;
+  width: 100%;
   display: flex;
-  max-width: 600px;
-  width: 50%;
+  justify-content: center;
+}
+.search-bar {
+  z-index: 2;
+  display: flex;
+  max-width: 1000px;
+  width: 61%;
   border-radius: 50px;
   justify-content: center;
   align-self: center;
@@ -116,22 +123,39 @@ input:checked + .slider {
   padding: 12px 5px;
   border: none;
   text-indent: 10px;
+  border-radius: 5px;
   transition: width 0.7s ease-in-out;
   outline: solid 2px;
-  outline-color: var(--color-primary);
+  outline-color: var(--color-third);
   font-family: 'Verdana', sans-serif;
 }
 .header-item {
   width: 165px;
 }
 .results {
-  width: 800px;
-  height: 460px;
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  transform: translateY(-2em);
+  max-width: 1000px;
+  transition: all 0.3s ease-in-out 0s, visibility 0s linear 0.3s, z-index 0s linear 0.01s;
+  width: 60%;
+  max-height: 460px;
   background-color: white;
-  outline: 4px solid;
-  outline-color: var(--color-accent);
+  outline: solid 2px;
+  outline-color: var(--color-third);
   color: var(--color-green);
 }
+.search-parent:focus .results,
+.search-parent:focus-within .results,
+.search-parent:hover .results {
+  visibility: visible; /* shows sub-menu */
+  opacity: 1;
+  z-index: 1;
+  transform: translateY(0%);
+  transition-delay: 0s, 0s, 0.3s;
+}
+
 .search-term {
   height: 40px;
   outline: 1px solid gray;
@@ -149,12 +173,13 @@ input:checked + .slider {
 .item > * {
   display: flex;
   align-items: center;
-  padding-left: 1em;
-  padding-right: 1em;
+  padding-left: .5em;
+  padding-right: .5em;
   height: 100%;
   width: 150px;
   overflow: hidden;
   text-overflow: ellipsis;
+  font-size: clamp(.3rem, 1.5vw, 1rem); 
 }
 .college {
   flex-grow: 1;
@@ -171,7 +196,7 @@ input:checked + .slider {
   display: none;
 }
 .search-items {
-  height: 420px;
+  height: 100%;
   overflow: auto;
 }
 .right {
@@ -180,14 +205,9 @@ input:checked + .slider {
   align-items: right;
 }
 .results-container {
-  width: 1000px;
-  margin-left: auto;
-  margin-right: auto;
+  justify-content: center;
   display: flex;
   flex-direction: row;
-  background-color: white;
-  outline: 4px solid;
-  outline-color: var(--color-accent);
   color: var(--color-green);
 }
 .toggles {
@@ -207,7 +227,7 @@ input:checked + .slider {
   user-select: none;
 }
 .hidden {
-  display: none;
+  visibility: hidden;
 }
 .drop-buttons {
   display: flex;
